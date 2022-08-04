@@ -1,0 +1,15 @@
+def rotate_left_right(node):
+
+  child=node.left
+  new_root=child.right
+  grand1=new_root.left
+  grand2=new_root.right
+  
+  child.right=grand1
+  node.left=grand2
+  new_root.left=child
+  new_root.right=node
+  
+  child.compute_height()
+  node.compute_height()
+  return new_root
